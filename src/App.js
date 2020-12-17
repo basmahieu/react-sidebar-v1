@@ -8,6 +8,8 @@ import Products from './pages/Products';
 function App() {
   return (
     <>
+    {/* This will make sure you can go from page to page  */}
+    {/* Dont forget to use "exact" */}
       <Router>
         <Navbar />
         <Switch>

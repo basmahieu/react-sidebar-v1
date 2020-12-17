@@ -16,12 +16,16 @@ function Navbar() {
 
     return (
         <>
+        {/* This will change easily all the Colors from the used Icons */}
         <IconContext.Provider value={{color:'#fff'}}>
            <div className="navbar">
                <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={showSidebar} />
                </Link>
            </div> 
+
+           {/* If you click on the icon (true) then it will change 'nav-menu active' */}
+           {/* ? - Conditional operator - assigns a value to a variable based on some condition. */}
            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                <ul className='nav-menu-items' onClick={showSidebar}>
                    <li className="navbar-toggle">
@@ -29,6 +33,8 @@ function Navbar() {
                            <AiIcons.AiOutlineClose />
                        </Link>
                    </li>
+
+                   {/* Map the menu array (./sidebarData) for the menu and acces data */}
                   {SidebarData.map((item, index)  => {
                       return(
                           <li key={index} className={item.cName}>
